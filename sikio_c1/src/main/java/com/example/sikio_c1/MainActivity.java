@@ -1,4 +1,4 @@
-package com.example.sikio;
+package com.example.sikio_c1;
 
 import android.os.Bundle;
 import android.view.View;

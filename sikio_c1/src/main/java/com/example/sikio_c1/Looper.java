@@ -1,4 +1,4 @@
-package com.example.sikio;
+package com.example.sikio_c1;
 
 import ioio.lib.api.DigitalOutput;
 import ioio.lib.api.IOIO;

@@ -5,7 +5,7 @@ android {
     buildToolsVersion "21.1.2"
 
     defaultConfig {
-        applicationId "com.example.sikio"
+        applicationId "com.example.sikio_c1"
         minSdkVersion 9
         targetSdkVersion 21
         versionCode 1
