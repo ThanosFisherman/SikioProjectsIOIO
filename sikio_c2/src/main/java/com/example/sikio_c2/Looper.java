@@ -10,6 +10,18 @@ import ioio.lib.util.IOIOLooperAlt;
 public class Looper extends IOIOLooperAlt
 {
 
+    public interface IInputListener
+    {
+        public void onButtonListenInput(boolean val);
+        public void onPotListenInput(float val);
+    }
+    private IInputListener listener;
+
+    public Looper(IInputListener listener)
+    {
+        this.listener = listener;
+    }
+
     // Declare the IO pins for the button and potentiometer.
     DigitalInput button; // Our button is a DigitalInput
     AnalogInput pot; // Our potentiometer is an AnalogInput
@@ -28,6 +40,9 @@ public class Looper extends IOIOLooperAlt
         // Opening the input pins.
         button = ioio.openDigitalInput(buttonPin);
         pot = ioio.openAnalogInput(potPin);
+
+        potVal = pot.read();
+        buttonVal = button.read();
     }
 
     @Override
@@ -37,12 +52,21 @@ public class Looper extends IOIOLooperAlt
         {
             // While we're running, read our potentiometer and button values. The pot value is a
             // number between 0 and 1. Button value is either a 0 or 1.
-            potVal = pot.read();
-            buttonVal = button.read();
+            if (potVal != pot.read() )
+            {
+                potVal = pot.read();
+                Logger.log.i("POT Value",String.valueOf(potVal));
+                listener.onPotListenInput(potVal);
+            }
+            if (buttonVal != button.read())
+            {
+                buttonVal = button.read();
+                Logger.log.i("Button Value",String.valueOf(buttonVal));
+                listener.onButtonListenInput(buttonVal);
+            }
             // Don't call this loop again for 100 milliseconds
             Thread.sleep(100);
-            Logger.log.i("POT Value",String.valueOf(potVal));
-            Logger.log.i("Button Value",String.valueOf(buttonVal));
+
         }
         catch (InterruptedException e)
         {

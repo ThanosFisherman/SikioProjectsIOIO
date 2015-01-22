@@ -9,8 +9,23 @@
                 tools:context="com.example.sikio_c2.MainActivity">
 
     <TextView
-        android:text="@string/hello_world"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/txtButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="57dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/txtPot"
+        android:layout_below="@+id/txtButton"
+        android:layout_alignLeft="@+id/txtButton"
+        android:layout_alignStart="@+id/txtButton"
+        android:layout_marginTop="55dp"/>
 
 </RelativeLayout>
