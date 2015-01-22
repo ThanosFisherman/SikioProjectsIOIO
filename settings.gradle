@@ -1,0 +1,6 @@
+include ':iOIOCoreLib', ':sikio_c1'
+include ':iOIOLibAndroid'
+include ':iOIOLibAccessory'
+include ':iOIOLibAndroidDevice'
+include ':iOIOLibBT'
+include ':helloIOIO'
