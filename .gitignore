@@ -1,0 +1,10 @@
+# Created by .ignore support plugin (hsz.mobi)
+build
+.idea
+SikioProjectsIOIO.iml
+iOIOLibBT/build
+sikio_c1/build
+iOIOLibAndroidDevice/build
+iOIOLibAndroid/build
+iOIOLibAccessory/build
+helloIOIO/build
