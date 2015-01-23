@@ -38,6 +38,18 @@ public class MainActivity extends IOIOActivity {
 		Logger.log.i("ANDROID","CHECK THIS OUT NOW I CAN LOG ON BOTH DESKTOP APPS AND ANDROIDS USING THIS CLASS");
 	}
 
+
+    /**
+     * A method to create our IOIO thread.
+     *
+     * @see ioio.lib.util.AbstractIOIOActivity#createIOIOThread()
+     */
+    @Override
+    protected IOIOLooper createIOIOLooper() {
+        //use either the Looper or Looper2
+        return new Looper();
+    }
+
 	/**
 	 * This is the thread on which all the IOIO activity happens. It will be run
 	 * every time the application is resumed and aborted when it is paused. The
@@ -56,8 +68,7 @@ public class MainActivity extends IOIOActivity {
 		 * @throws ConnectionLostException
 		 *             When IOIO connection is lost.
 		 *
-		 * @see ioio.lib.util.IOIOLooper#setup()
-		 */
+         */
 
 		@Override
 		protected void setup() throws ConnectionLostException,
@@ -136,17 +147,6 @@ public class MainActivity extends IOIOActivity {
 			showVersions(ioio, "Incompatible firmware version!");
 		}
 
-	}
-
-	/**
-	 * A method to create our IOIO thread.
-	 *
-	 * @see ioio.lib.util.AbstractIOIOActivity#createIOIOThread()
-	 */
-	@Override
-	protected IOIOLooper createIOIOLooper() {
-		//use either the Looper or Looper2
-		return new Looper2();
 	}
 
 	private void showVersions(IOIO ioio, String title) {
