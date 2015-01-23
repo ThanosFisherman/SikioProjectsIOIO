@@ -27,7 +27,7 @@ public abstract class IOIOLooperAlt implements IOIOLooper {
 
 	}
 	protected void disconnected(IOIO ioio) {}
-	
+
 	@Override
 	public void incompatible() {}
 
