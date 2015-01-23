@@ -9,7 +9,7 @@ public class Looper extends IOIOLooperAlt
 {
     PwmOutput piezo; // Piezo buzzers are pulse-modulated output
     int piezoPin = 11; // Pin for our piezo speaker
-    boolean playTone = false;
+    boolean playTone = false, playMario = false;
     int freq = 523; // Variable to keep track of note frequency
 
     @Override
@@ -34,6 +34,16 @@ public class Looper extends IOIOLooperAlt
             piezo.close(); // Turn off signal to piezo speaker
             playTone = false; // Set to false so note doesn't continuously play, and waits for another screen press
         }
-
+        if (playMario)
+        {
+            for (int thisNote = 0; thisNote < Notes.melody.length; thisNote++)
+            {
+                piezo = ioio.openPwmOutput(piezoPin, Notes.melody[thisNote]);
+                piezo.setDutyCycle(0.5f);
+                Thread.sleep(100);
+                piezo.close(); // Turn off signal to piezo speaker
+            }
+        }
+        playMario = false;
     }
 }
