@@ -2,6 +2,8 @@ package com.example.sikio_c3;
 
 import android.os.Bundle;
 import android.view.MotionEvent;
+import android.view.View;
+import android.widget.Button;
 
 import ioio.lib.util.IOIOLooper;
 import ioio.lib.util.android.IOIOActivity;
@@ -18,6 +20,15 @@ public class MainActivity extends IOIOActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         loop = new Looper();
+        Button btnMario = (Button) findViewById(R.id.btnMario);
+        btnMario.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                loop.playMario = true;
+            }
+        });
     }
 
     @Override
