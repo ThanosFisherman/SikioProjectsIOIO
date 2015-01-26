@@ -20,8 +20,62 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/seekBar"
-        android:layout_centerVertical="true"
+        android:layout_below="@+id/textView"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"/>
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="169dp"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:id="@+id/btn0"
+        android:layout_below="@+id/seekBar"
+        android:layout_toLeftOf="@+id/btn45"
+        android:layout_toStartOf="@+id/btn45"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="45"
+        android:id="@+id/btn45"
+        android:layout_below="@+id/seekBar"
+        android:layout_toLeftOf="@+id/btn90"
+        android:layout_toStartOf="@+id/btn90"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="90"
+        android:id="@+id/btn90"
+        android:layout_alignTop="@+id/btn45"
+        android:layout_toLeftOf="@+id/btn135"
+        android:layout_toStartOf="@+id/btn135"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="135"
+        android:id="@+id/btn135"
+        android:layout_alignTop="@+id/btn90"
+        android:layout_toLeftOf="@+id/btn180"
+        android:layout_toStartOf="@+id/btn180"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="180"
+        android:id="@+id/btn180"
+        android:layout_alignTop="@+id/btn135"
+        android:layout_alignRight="@+id/textView"
+        android:layout_alignEnd="@+id/textView"
+        android:layout_marginRight="24dp"
+        android:layout_marginEnd="24dp"/>
 
 </RelativeLayout>

@@ -1,6 +1,8 @@
 package com.example.sikio_c4;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.SeekBar;
 
 import ioio.lib.spi.Logger;
@@ -8,7 +10,7 @@ import ioio.lib.util.IOIOLooper;
 import ioio.lib.util.android.IOIOActivity;
 
 
-public class MainActivity extends IOIOActivity
+public class MainActivity extends IOIOActivity implements View.OnClickListener
 {
     private SeekBar seek;
     private Looper loop;
@@ -20,6 +22,17 @@ public class MainActivity extends IOIOActivity
         setContentView(R.layout.activity_main);
         seek = (SeekBar) findViewById(R.id.seekBar);
         loop = new Looper();
+        Button btn0,btn45,btn90,btn135,btn180;
+        btn0 = (Button)findViewById(R.id.btn0);
+        btn45 = (Button)findViewById(R.id.btn45);
+        btn90 = (Button)findViewById(R.id.btn90);
+        btn135 = (Button)findViewById(R.id.btn135);
+        btn180 = (Button)findViewById(R.id.btn180);
+        btn0.setOnClickListener(this);
+        btn45.setOnClickListener(this);
+        btn90.setOnClickListener(this);
+        btn135.setOnClickListener(this);
+        btn180.setOnClickListener(this);
         setupSeekBar();
     }
 
@@ -58,5 +71,28 @@ public class MainActivity extends IOIOActivity
 
             }
         });
+    }
+
+    @Override
+    public void onClick(View v)
+    {
+        switch (v.getId())
+        {
+            case R.id.btn0:
+                seek.setProgress(0);
+                break;
+            case R.id.btn45:
+                seek.setProgress(100 * 82 / 180);
+                break;
+            case R.id.btn90:
+                seek.setProgress(100 * 90 / 180);
+                break;
+            case R.id.btn135:
+                seek.setProgress(100 * 135 / 180);
+                break;
+            case R.id.btn180:
+                seek.setProgress(100 * 180 / 180);
+                break;
+        }
     }
 }
