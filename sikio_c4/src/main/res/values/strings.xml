@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">Sikio_c4</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="hello_world">Servo NoOb Motor!</string>
     <string name="action_settings">Settings</string>
 
 </resources>
