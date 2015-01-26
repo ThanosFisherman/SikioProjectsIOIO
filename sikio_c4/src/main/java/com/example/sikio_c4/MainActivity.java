@@ -1,6 +1,5 @@
 package com.example.sikio_c4;
 
-import android.graphics.Matrix;
 import android.os.Bundle;
 import android.widget.SeekBar;
 
@@ -39,9 +38,12 @@ public class MainActivity extends IOIOActivity
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser)
             {
-                loop.progress = progress;
-                int degree = ((int)(180.0F * progress) / 100);
-                Logger.log.i("LOOPA", String.valueOf(((int)(180.0F * progress) / 100)));
+               // int degree = ((int) (180.0F * progress) / 100); //moires
+                //int seekpos = 100 * degree / 180; //antistixi thesi baras me vasi tis moires
+               // int tomillis = 2500 * progress / 100; //metatrwpi ton microseconds se millisecons kanonika me auta ta values alla to servo trwei kwllimata
+                int tomillis = (2400 * progress / 100) + 25;
+                loop.progress = tomillis;
+                Logger.log.i("LOOPA", String.valueOf(tomillis));
             }
 
             @Override
@@ -54,18 +56,6 @@ public class MainActivity extends IOIOActivity
             public void onStopTrackingTouch(SeekBar seekBar)
             {
 
-            }
-        });
-    }
-
-    private void enableUi(final boolean enable)
-    {
-        runOnUiThread(new Runnable()
-        {
-            @Override
-            public void run()
-            {
-                seek.setEnabled(enable);
             }
         });
     }

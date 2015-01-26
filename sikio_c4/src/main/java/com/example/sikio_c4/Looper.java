@@ -24,7 +24,7 @@ public class Looper extends IOIOLooperAlt
     protected void loop(IOIO ioio) throws ConnectionLostException, InterruptedException
     {
         // Set new Servo angle based on duty cycle set by cursor position
-        servo.setPulseWidth( ((int)(180.0F * progress) / 100));
+        servo.setPulseWidth( progress);
         // Don't call this loop again for 100 milliseconds
         Thread.sleep(100);
     }
