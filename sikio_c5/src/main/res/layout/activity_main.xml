@@ -20,7 +20,7 @@
         android:inputType="numberSigned"
         android:ems="10"
         android:id="@+id/editSecs"
-        android:hint="enter seconds"
+        android:hint="seconds"
         android:layout_below="@+id/textView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
