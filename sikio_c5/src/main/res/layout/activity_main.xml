@@ -15,7 +15,7 @@
         android:id="@+id/textView"/>
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:inputType="numberSigned"
         android:ems="10"
@@ -24,5 +24,14 @@
         android:layout_below="@+id/textView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/textView2"
+        android:layout_alignBottom="@+id/editSecs"
+        android:layout_toRightOf="@+id/editSecs"
+        android:layout_toEndOf="@+id/editSecs"/>
 
 </RelativeLayout>

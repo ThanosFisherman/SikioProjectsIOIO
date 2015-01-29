@@ -13,6 +13,16 @@ public class Looper extends IOIOLooperAlt
     boolean motorOn = false;
     long endTimeMillis = 0;
     long countdown = 0;
+    public interface IMotorMonitor
+    {
+        public void onSecsCountdown(int secs);
+    }
+    private IMotorMonitor listener;
+
+    public Looper(IMotorMonitor listener)
+    {
+        this.listener = listener;
+    }
 
     @Override
     public void setup(IOIO ioio) throws ConnectionLostException, InterruptedException
@@ -33,6 +43,7 @@ public class Looper extends IOIOLooperAlt
             // motorOn will be equal to 1 if timer is still counting down, so keep motor running
             if (motorOn)
             {
+                listener.onSecsCountdown((int) countdown);
                 if (countdown <=0)
                 {
                     motorOn=false;
