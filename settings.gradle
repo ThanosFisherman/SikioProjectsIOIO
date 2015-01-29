@@ -1,4 +1,4 @@
-include ':iOIOCoreLib', ':sikio_c1', ':sikio_c2', ':sikio_c3', ':sikio_c4'
+include ':iOIOCoreLib', ':sikio_c1', ':sikio_c2', ':sikio_c3', ':sikio_c4', ':sikio_c5'
 include ':iOIOLibAndroid'
 include ':iOIOLibAccessory'
 include ':iOIOLibAndroidDevice'

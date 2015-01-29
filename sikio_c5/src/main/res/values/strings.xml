@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Sikio_c5</string>
+    <string name="hello_world">Enter Seconds to Turn on Motor:</string>
+    <string name="action_settings">Settings</string>
+
+</resources>
