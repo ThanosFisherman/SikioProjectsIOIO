@@ -8,9 +8,11 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
+import ioio.lib.spi.Logger;
 import ioio.lib.util.IOIOLooper;
 import ioio.lib.util.android.IOIOActivity;
 
@@ -40,11 +42,19 @@ public class MainActivity extends IOIOActivity implements TextView.OnEditorActio
     {
         if (actionId == EditorInfo.IME_ACTION_DONE || actionId == EditorInfo.IME_NULL)
         {
-            hideKeyboard(v);
-            loop.endTimeMillis = System.currentTimeMillis() + Long.valueOf(v.getText().toString()) * 1000;
+            if (v.length() == 0)
+            {
+                Toast.makeText(this,"Empty text dude",Toast.LENGTH_SHORT).show();
+            }
+            else
+            {
+                hideKeyboard(v);
+                loop.endTimeMillis = System.currentTimeMillis() + Long.valueOf(v.getText().toString()) * 1000;
 
-            loop.motorOn = true;
-            return true;
+                loop.motorOn = true;
+                return true;
+            }
+
         }
         return false;
     }
