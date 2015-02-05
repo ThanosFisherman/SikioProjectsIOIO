@@ -192,7 +192,7 @@ public class AccessoryConnectionBootstrap extends BroadcastReceiver implements
 
 	private void setState(State state) {
 		state_ = state;
-		notifyAll();
+        ((Object)this).notifyAll(); //solution for ambiguous method call in android studio -.-
 	}
 
 	private class Connection implements IOIOConnection {
