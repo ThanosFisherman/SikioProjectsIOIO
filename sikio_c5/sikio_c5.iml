@@ -84,8 +84,8 @@
     <orderEntry type="jdk" jdkName="Android API 21 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="iOIOLibBT" exported="" />
-    <orderEntry type="module" module-name="iOIOCoreLib" exported="" />
     <orderEntry type="module" module-name="iOIOLibAndroidDevice" exported="" />
+    <orderEntry type="module" module-name="iOIOLibCore" exported="" />
     <orderEntry type="module" module-name="iOIOLibAccessory" exported="" />
   </component>
 </module>
